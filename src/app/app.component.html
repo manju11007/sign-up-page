@@ -1,8 +1,91 @@
+<div class="d-flex" id="wrapper">
 
-<app-header></app-header>
+  <!-- Sidebar -->
+  <div class="bg-primary border-right" id="sidebar-wrapper"  [ngClass]="status ? 'show' : 'hide'">
+    <div class="sidebar-heading bg-primary">Deal Connections </div>
+    <div class="list-group list-group-flush">
+      <a href="#" class="list-group-item list-group-item-action bg-primary">Dashboard</a>
+      <a href="#" class="list-group-item list-group-item-action bg-primary">Shortcuts</a>
+      <a href="#" class="list-group-item list-group-item-action bg-primary">Overview</a>
+      <a href="#" class="list-group-item list-group-item-action bg-primary">Events</a>
+      <a href="#" class="list-group-item list-group-item-action bg-primary">Profile</a>
+      <a href="#" class="list-group-item list-group-item-action bg-primary">Status</a>
+    </div>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+
+      <div class="container-fluid">
+        <button class="btn btn-primary" (click)="clickEvent()">
+          <div class="container">
+            <div class="bar1"></div>
+            <div class="bar1"></div>
+            <div class="bar1"></div>
+          </div>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link"
+              aria-current="page"
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{exact : true}"
+
+              >Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/signuppage" routerLinkActive="active">Signup Page</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" routerLink="/signupconfirmpage" routerLinkActive="active">Signup Confirmation Page</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="button">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+
+      <router-outlet></router-outlet>
 
 
-<app-signup-page></app-signup-page>
 
-<br><br><br><br><br><br><br>
-<app-signup-confirm-page></app-signup-confirm-page>
+
+
+      <!-- <app-signup-page></app-signup-page> -->
+      <!-- <app-signup-confirm-page></app-signup-confirm-page> -->
+  <!--    <app-demo></app-demo>
+       <app-signup-page></app-signup-page>
+      <br><br><br><br><br><br><br>
+      <app-signup-confirm-page></app-signup-confirm-page> -->
+    </div>
+
+
+  </div>
+  <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->

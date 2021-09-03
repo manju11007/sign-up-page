@@ -10,9 +10,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'my-first-app';
 
-
-
   constructor() {  }
+
+  status: boolean = false;
+  clickEvent(){
+      this.status = !this.status;
+}
 
 
 }

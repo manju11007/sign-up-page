@@ -1,19 +1,20 @@
 
 <div class="row" class="container-fluid" style="margin-top: 10px; margin-right: 20px;">
   <div class="col-xs-12 col-xs-12 col-md-12" style="margin-top: 10px;">
-<form>
-<h2 style="margin-top: 10px;margin-left: 10px;"> Sing-up Page: </h2>
+    <form #signupForm="ngForm" (ngSubmit)="Register(signupForm)">
+<h2 style="margin-top: 10px;margin-left: 10px;"> Sign-up Page: </h2>
 
 <div class="row" style="margin-top: 10px;">
   <div class="col-sm-6 col-xs-9 col-md-9" form-group>
     <input type="number"
     id="phno"
     class="form-control"
-    name="name"
+    name="mainnum"
     placeholder="Main Person Mobile-Number"
     ngModel
     required>
 </div>
+
 <div class="col-sm-3 col-xs-3 col-md-3">
   <button
   type="button"
@@ -25,9 +26,9 @@
 <div class="row" style="margin-top: 10px;">
   <div class="col-sm-6 col-xs-9 col-md-9" form-group>
     <input type="text"
-    id="email"
+    id="mainemail"
     class="form-control"
-    name="name"
+    name="mainemail"
     placeholder="Main Person Email-Id"
     ngModel
     required>
@@ -43,17 +44,17 @@
 <div class="row" style="margin-top: 10px;">
 <div class="col-sm-2 col-xs-2 col-md-2">
   <select
-  class="form-control" id="sel">
+  class="form-control" id="sel" name="mrmrs" ngModel>
     <option value="Mr">Mr</option>
     <option value="Mrs">Mrs</option>
-
   </select>
+
 </div>
 <div class="col-sm-4 col-xs-4 col-md-4" form-group>
   <input type="text"
-  id="fname"
+  id="firstname"
   class="form-control"
-  name="fname"
+  name="firstname"
   placeholder="Main Person First Name"
   ngModel
   required>
@@ -74,7 +75,7 @@
     <input type="text"
     id="compname"
     class="form-control"
-    name="cname"
+    name="compname"
     placeholder="Company Name"
     ngModel>
   </div>
@@ -137,7 +138,7 @@
   <input type="number"
   id="month"
   class="form-control"
-  name="Month"
+  name="month"
   placeholder="Month"
   ngModel>
 </div>
@@ -146,9 +147,9 @@
 </div>
 <div class="col-sm-1 col-xs-1 col-md-1" form-group>
   <input type="number"
-  id="pmonth"
+  id="prmoter"
   class="form-control"
-  name="pMonth"
+  name="prmoter"
   ngModel>
   </div>
   <div class="col-sm-2 col-xs-2 col-md-2" form-group>
@@ -156,9 +157,9 @@
   </div>
   <div class="col-sm-1 col-xs-1 col-md-1" form-group>
     <input type="number"
-    id="tfmonth"
+    id="tfund"
     class="form-control"
-    name="tfMonth"
+    name="tfund"
     ngModel>
     </div>
 </div>
@@ -184,7 +185,7 @@
     <input type="number"
     id="monthrev"
     class="form-control"
-    name="Monthrev"
+    name="monthrev"
     ngModel>
     </div>
     <div class="col-sm-2 col-xs-2 col-md-2 form-group">
@@ -194,11 +195,11 @@
       <input type="number"
       id="monthbrn"
       class="form-control"
-      name="Monthbrn"
+      name="monthbrn"
       ngModel>
       </div>
       <div class="col-sm-2 col-xs-2 col-md-2 form-group">
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="button" (click)="onLoadSignupConfirmPage()" class="btn btn-primary">Submit</button>
 </div>
 <div class="col-sm-2 col-xs-2 col-md-2 form-group">
 <button type="button" class="btn btn-danger">Cancel</button>
@@ -206,5 +207,88 @@
 </div>
 
 </form>
+
+<br>
+<br>
+<br>
+<br>
+
+<table class="table table-bordered">
+
+  <tbody>
+    <tr>
+      <th class="table-active">DC-Id</th>
+      <td colspan="3"> DC - 001 </td>
+    </tr>
+    <tr>
+      <th class="table-active">Mobile-Number</th>
+      <td colspan="3">{{signupForm.value.mainnum }}</td>
+    </tr>
+    <tr>
+      <th class="table-active">Email Id</th>
+      <td colspan="3">{{signupForm.value.mainemail }}</td>
+    </tr>
+
+    <tr>
+      <th class="table-active">Company Name</th>
+      <td colspan="3"> {{signupForm.value.compname }} </td>
+    </tr>
+    <tr>
+      <th class="table-active">Main Person</th>
+      <td colspan="3">{{signupForm.value.mrmrs }}.{{signupForm.value.firstname }}  {{signupForm.value.sname }}</td>
+    </tr>
+
+    <tr>
+      <th class="table-active">Location</th>
+      <td>{{signupForm.value.loc }}</td>
+      <th class="table-active">Country</th>
+      <td>{{signupForm.value.coun }}</td>
+    </tr>
+
+    <tr>
+      <th class="table-active">Industry</th>
+      <td>{{signupForm.value.indus }}</td>
+      <th class="table-active">Segment</th>
+      <td>{{signupForm.value.segm }}</td>
+    </tr>
+
+    <tr>
+      <th class="table-active">Start (Year-Month)</th>
+      <td>{{signupForm.value.year }} - {{signupForm.value.month }}</td>
+      <th class="table-active">#Promoters</th>
+      <td>{{signupForm.value.prmoter }}</td>
+    </tr>
+
+    <tr>
+      <th class="table-active">Total Funding(Cr)</th>
+      <td>{{signupForm.value.tfund }}</td>
+      <th class="table-active">Monthly Burn(Cr)</th>
+      <td>{{signupForm.value.monthbrn }}</td>
+    </tr>
+  </tbody>
+</table>
+<b>
+  <p> 1) "Confirm" creates your "FREE" Listing. "Pain" members can contact you. </p>
+  <p> 2) Complete Other Details to enhance reach.</p>
+  <p> 3) "Purchase" credits to contact others. </p>
+  </b>
+
+  <div class="container" align="right" style="margin-bottom: 20px;">
+    <div class="row">
+        <div class="col-md-12 bg-light text-right">
+            <button type="button" class="btn btn-primary">Confirm</button>
+            <button type="button" class="btn btn-warning"style="margin-left: 20px;">Edit</button>
+        </div>
+    </div>
+  </div>
+
+
+{{signupForm.value | json}}
+<br>
+<br>
+<br>
+<br>
+
+
 </div>
 </div>
