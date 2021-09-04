@@ -13,6 +13,7 @@ export class AppComponent {
   constructor() {  }
 
   status: boolean = false;
+
   clickEvent(){
       this.status = !this.status;
 }
