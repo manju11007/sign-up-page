@@ -1,0 +1,39 @@
+<h2>
+  Signup Page Details:
+</h2>
+
+<table class="gridList table-bordered">
+  <tr>
+    <th>Main Person Mobile-Number</th>
+    <th>Main Person Email-Id</th>
+    <th>Main Person Name</th>
+    <th>Company Name</th>
+    <th>Location</th>
+    <th>Country</th>
+    <th>Industry</th>
+    <th>Segment</th>
+    <th>Start(Year/Month)</th>
+    <th>#Promoters</th>
+    <th>Total Funding (Cr)</th>
+    <th>Stage</th>
+    <th>Monthly Revenue (Cr)</th>
+    <th>Monthly Burn (Cr)</th>
+  </tr>
+
+  <tr *ngFor="let item of signuppagecontent">
+    <td>{{item.mainnum}}</td>
+    <td>{{item.mainemail }}</td>
+    <td>{{item.mrmrs }} {{item.firstname }}</td>
+    <td>{{item.compname}}</td>
+    <td>{{item.loc}}</td>
+    <td>{{item.coun}}</td>
+    <td>{{item.indus}}</td>
+    <td>{{item.segm}}</td>
+    <td>{{item.year}} / {{item.month}} </td>
+    <td>{{item.prmoter}}</td>
+    <td>{{item.tfund}}</td>
+    <td> {{item.stage}} </td>
+    <td>{{item.monthrev}}</td>
+    <td>{{item.monthbrn}}</td>
+  </tr>
+</table>

@@ -10,6 +10,7 @@ import { DemoComponent } from './demo/demo.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
+import { Demo1Component } from './demo1/demo1.component';
 
 
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'signuppage', component: SignupPageComponent },
   { path: 'signupconfirmpage', component: SignupConfirmPageComponent },
+  { path: 'signuppagedata', component: Demo1Component }
 ];
 
 @NgModule({
@@ -27,6 +29,7 @@ const routes: Routes = [
     SignupConfirmPageComponent,
     DemoComponent,
     HomePageComponent,
+    Demo1Component,
   ],
   imports: [
     RouterModule.forRoot(routes),
